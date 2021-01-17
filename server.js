@@ -1,6 +1,6 @@
 import express from 'express'
-import initErrorHandlers from 'modularni-urad-utils/error_handlers'
-import initDB from './db.js'
+import initErrorHandlers from 'modularni-urad-utils/error_handlers.js'
+import initDB from 'modularni-urad-utils/db.js'
 import initRoutes from './routes.js'
 
 export async function init (mocks = null) {
