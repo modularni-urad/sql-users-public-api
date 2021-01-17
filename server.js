@@ -2,14 +2,11 @@ import express from 'express'
 import initErrorHandlers from 'modularni-urad-utils/error_handlers'
 import initDB from './db.js'
 import initRoutes from './routes.js'
-import session from './session.js'
 
 export async function init (mocks = null) {
-  const knex = mocks ? await mocks.dbinit() : await initDB()  
+  const knex = mocks ? await mocks.dbinit() : await initDB()
   const app = express()
   const appContext = { express, knex }
-
-  app.use(session)
 
   app.use(initRoutes(appContext))
 
